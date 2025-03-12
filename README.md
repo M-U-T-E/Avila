@@ -1,6 +1,6 @@
 # Avila
 ```
-chat-app/
+Avila/
 ├── server/ # TypeScript server (WebSocket and REST API)
 │ ├── src/
 │ ├── package.json
