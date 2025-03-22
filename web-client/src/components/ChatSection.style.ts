@@ -65,13 +65,15 @@ const MessageWithAvatar = styled.div`
     align-items: start;
 `
 
-const ChatSection = styled.div`
-    width: 60rem;
-    margin: auto;
-    padding: 2rem;
+const MessagesContainer = styled.div`
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: auto;
+    width: 50rem;
+    margin: .8rem auto 0 auto;
+    flex: 1;
+    padding: 0 2rem;
+    overflow-y: auto;
 
     & > :first-child {
         margin-top: auto !important;
@@ -82,4 +84,55 @@ const ChatSection = styled.div`
     }
 `
 
-export { MessageBubble, MessageWrapper, Avatar, MessageWithAvatar, ChatSection }
+const InputWrapper = styled.div`
+    height: 4.2rem;
+    margin: 1rem 0;
+    background-color: #222;
+    border-radius: 1rem;
+    display: flex;
+
+    &:focus-within{
+        background-position: 0% 0%;
+        background: linear-gradient(to right, #B294FF, #242124, #5A4FCF, #242124, #B294FF);
+        background-size: 500% auto;
+        animation: gradient 3s linear infinite;
+    }
+    @keyframes gradient {
+    0% {
+        background-color: 0 0;
+    }
+
+    100% {
+        background-position: 125% 0;
+    }
+}
+`
+
+const MessageInput = styled.textarea`
+    height: 2rem;
+    width: 58rem;
+    border: none;
+    background-color: #222;
+    color: #eee;
+    resize: none;
+    outline: none;
+    padding: 1rem;
+    border-radius: .8rem;
+    position: absolute;
+    bottom: 1.2rem;
+    line-height: 1.6;
+
+    &::-webkit-scrollbar{
+        width: 0px;
+    }
+`
+
+const ChatSection = styled.div`
+    width: 60rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+`
+
+export { MessageBubble, MessageWrapper, Avatar, MessageWithAvatar, MessagesContainer, InputWrapper, MessageInput, ChatSection }

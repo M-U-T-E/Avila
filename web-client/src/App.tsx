@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker'
 import { ThemeProvider } from "styled-components"
-import { MessageWrapper, Avatar, MessageWithAvatar, ChatSection } from "./components/ChatSection.style"
-import { RenderMessageWithName, RenderMessage } from "./components/ChatSection"
+import { MessageWrapper, Avatar, MessageWithAvatar, ChatSection, MessagesContainer } from "./components/ChatSection.style"
+import { RenderMessageWithName, RenderMessage, RenderMessageInput } from "./components/ChatSection"
 import GlobalStyles from "./GlobalStyle.style"
 import Logo from './assets/logo.png'
 
@@ -27,21 +27,31 @@ function App() {
       <GlobalStyles />
       <ThemeProvider theme={theme.dark}>
         <ChatSection>
-          <MessageWithAvatar>
-            <Avatar src={Logo} />
-            <MessageWrapper isOwn={false}>
-              <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+          <MessagesContainer>
+            <MessageWithAvatar>
+              <Avatar src={Logo} />
+              <MessageWrapper isOwn={false}>
+                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+              </MessageWrapper>
+            </MessageWithAvatar>
+            <MessageWrapper isOwn={true}>
+              <RenderMessage text={faker.lorem.paragraph()} />
             </MessageWrapper>
-          </MessageWithAvatar>
-          <MessageWrapper isOwn={true}>
-            <RenderMessage text={faker.lorem.paragraph()} />
-          </MessageWrapper>
-          <MessageWithAvatar>
-            <Avatar src={Logo} />
-            <MessageWrapper isOwn={false}>
-              <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
-            </MessageWrapper>
-          </MessageWithAvatar>
+            <MessageWithAvatar>
+              <Avatar src={Logo} />
+              <MessageWrapper isOwn={false}>
+                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+              </MessageWrapper>
+            </MessageWithAvatar>
+          </MessagesContainer>
+          <RenderMessageInput />
         </ChatSection>
       </ThemeProvider >
     </>

@@ -1,6 +1,6 @@
 import React from "react"
 import { RenderMessageProps, RenderMessageWithNameProps } from "./ChatSection.interface"
-import { MessageBubble } from "./ChatSection.style"
+import { InputWrapper, MessageBubble, MessageInput } from "./ChatSection.style"
 
 const RenderMessage: React.FC<RenderMessageProps> = ({ text }) => {
     const paragraphs = text.split('\n')
@@ -27,4 +27,12 @@ const RenderMessageWithName: React.FC<RenderMessageWithNameProps> = ({ name, tex
     </>
 }
 
-export { RenderMessage, RenderMessageWithName }
+const RenderMessageInput = () => {
+    return <>
+        <InputWrapper>
+            <MessageInput placeholder='Write a message' dir='auto' />
+        </InputWrapper>
+    </>
+}
+
+export { RenderMessage, RenderMessageWithName, RenderMessageInput }

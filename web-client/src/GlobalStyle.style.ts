@@ -19,6 +19,22 @@ const GlobalStyles = createGlobalStyle`
         font-style: normal;
         color: #292b2c;
     }
+
+    ::-webkit-scrollbar {
+        width: .5rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-track:hover {
+        background: #222;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #6E6E6E;
+    }
 `
 
 export default GlobalStyles
