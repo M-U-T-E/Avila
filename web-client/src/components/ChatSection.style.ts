@@ -70,7 +70,7 @@ const MessagesContainer = styled.div`
     flex-direction: column;
     height: auto;
     width: 50rem;
-    margin: .8rem auto 0 auto;
+    margin: 1.2rem auto 0 auto;
     flex: 1;
     padding: 0 2rem;
     overflow-y: auto;
@@ -86,8 +86,9 @@ const MessagesContainer = styled.div`
 
 const InputWrapper = styled.div`
     height: 4.2rem;
+    max-height: 20rem;
     margin: 1rem 0;
-    background-color: #222;
+    background-color: transparent;
     border-radius: 1rem;
     display: flex;
 
@@ -97,6 +98,7 @@ const InputWrapper = styled.div`
         background-size: 500% auto;
         animation: gradient 3s linear infinite;
     }
+    
     @keyframes gradient {
     0% {
         background-color: 0 0;
@@ -109,7 +111,6 @@ const InputWrapper = styled.div`
 `
 
 const MessageInput = styled.textarea`
-    height: 2rem;
     width: 58rem;
     border: none;
     background-color: #222;
@@ -117,9 +118,8 @@ const MessageInput = styled.textarea`
     resize: none;
     outline: none;
     padding: 1rem;
+    margin-bottom: .2rem;
     border-radius: .8rem;
-    position: absolute;
-    bottom: 1.2rem;
     line-height: 1.6;
 
     &::-webkit-scrollbar{
