@@ -87,10 +87,12 @@ const MessagesContainer = styled.div`
 const InputWrapper = styled.div`
     height: 4.2rem;
     max-height: 20rem;
-    margin: 1rem 0;
+    margin: 1rem auto;
+    width: 55rem;
     background-color: transparent;
     border-radius: 1rem;
     display: flex;
+    position: relative;
 
     &:focus-within{
         background-position: 0% 0%;
@@ -100,30 +102,55 @@ const InputWrapper = styled.div`
     }
     
     @keyframes gradient {
-    0% {
-        background-color: 0 0;
-    }
+        0% {
+            background-color: 0 0;
+        }
 
-    100% {
-        background-position: 125% 0;
+        100% {
+            background-position: 125% 0;
+        }
     }
-}
 `
 
 const MessageInput = styled.textarea`
-    width: 58rem;
+    width: 100%;
     border: none;
     background-color: #222;
     color: #eee;
     resize: none;
     outline: none;
-    padding: 1rem;
+    padding: 1rem 4rem 1rem 1rem;
     margin-bottom: .2rem;
     border-radius: .8rem;
     line-height: 1.6;
 
     &::-webkit-scrollbar{
         width: 0px;
+    }
+`
+
+const SendButton = styled.button`
+    background-color: transparent;
+    position: absolute;
+    right: .5rem;
+    bottom: 0;
+    height: 4rem;
+    width: 2.5rem;
+    border: 0;
+    cursor: pointer;
+
+    & .base{
+        fill: #ccc;
+    }
+
+    & .hover{
+        transition: opacity 0.2s ease;
+        fill:url('#buttonHoverGradient');
+        opacity: 0;
+    }
+
+    &:hover .hover{
+        opacity: 1;
     }
 `
 
@@ -135,4 +162,4 @@ const ChatSection = styled.div`
     height: 100vh;
 `
 
-export { MessageBubble, MessageWrapper, Avatar, MessageWithAvatar, MessagesContainer, InputWrapper, MessageInput, ChatSection }
+export { MessageBubble, MessageWrapper, Avatar, MessageWithAvatar, MessagesContainer, InputWrapper, MessageInput, SendButton, ChatSection }
