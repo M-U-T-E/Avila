@@ -30,16 +30,16 @@ function App() {
           <MessagesContainer>
             <MessageWithAvatar>
               <Avatar src={Logo} />
-              <MessageWrapper isOwn={false}>
+              <MessageWrapper $isOwn={false}>
                 <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
               </MessageWrapper>
             </MessageWithAvatar>
-            <MessageWrapper isOwn={true}>
+            <MessageWrapper $isOwn={true}>
               <RenderMessage text={faker.lorem.paragraph()} />
             </MessageWrapper>
             <MessageWithAvatar>
               <Avatar src={Logo} />
-              <MessageWrapper isOwn={false}>
+              <MessageWrapper $isOwn={false}>
                 <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
                 <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
                 <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />

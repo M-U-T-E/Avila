@@ -20,29 +20,29 @@ const MessageBubble = styled.div`
     }
 `
 
-const MessageWrapper = styled.div<{ isOwn: boolean }>`
+const MessageWrapper = styled.div<{ $isOwn: boolean }>`
     display: flex;
     flex-direction: column;
-    align-items: ${(props) => props.isOwn ? "end" : "start"};
+    align-items: ${(props) => props.$isOwn ? "end" : "start"};
     max-width: 50rem;
 
     & > div{
-        background: ${props => props.isOwn ? props.theme.ownMessageBackground : props.theme.othersMessageBackground};
+        background: ${props => props.$isOwn ? props.theme.ownMessageBackground : props.theme.othersMessageBackground};
         background-attachment: fixed;
-        color: ${(props) => props.isOwn ? props.theme.ownMessageForeground : props.theme.othersMessageForeground};
+        color: ${(props) => props.$isOwn ? props.theme.ownMessageForeground : props.theme.othersMessageForeground};
     }
 
     & > div:first-child{
-        border-radius: ${props => props.isOwn ? props.theme.ownFirstMessageRadius : props.theme.othersFirstMessageRadius};
+        border-radius: ${props => props.$isOwn ? props.theme.ownFirstMessageRadius : props.theme.othersFirstMessageRadius};
     }
 
     & > div:not(:first-child):not(:last-child){
-        border-radius: ${props => props.isOwn ? props.theme.ownMiddleMessageRadius : props.theme.othersMiddleMessageRadius};
+        border-radius: ${props => props.$isOwn ? props.theme.ownMiddleMessageRadius : props.theme.othersMiddleMessageRadius};
     }
 
     & > div:only-child,
     & > div:last-child{
-        border-radius: ${props => props.isOwn ? props.theme.ownLastOrOnlyMessageRadius : props.theme.othersLastOrOnlyMessageRadius};
+        border-radius: ${props => props.$isOwn ? props.theme.ownLastOrOnlyMessageRadius : props.theme.othersLastOrOnlyMessageRadius};
     }
 
     & > div:not(:last-child){
