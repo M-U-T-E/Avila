@@ -4,6 +4,8 @@ import { MessageWrapper, Avatar, MessageWithAvatar, ChatSection, MessagesContain
 import { RenderMessageWithName, RenderMessage, RenderMessageInput } from "./components/ChatSection"
 import GlobalStyles from "./GlobalStyle.style"
 import Logo from './assets/logo.png'
+import { MembersContainer, MembersRole } from './components/InfoContainer.style'
+import { RenderMemberInfo } from './components/InfoContainer'
 
 
 const theme = {
@@ -26,33 +28,44 @@ function App() {
     <>
       <GlobalStyles />
       <ThemeProvider theme={theme.dark}>
-        <ChatSection>
-          <MessagesContainer>
-            <MessageWithAvatar>
-              <Avatar src={Logo} />
-              <MessageWrapper $isOwn={false}>
-                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+        <div style={{ display: 'flex' }}>
+          <ChatSection>
+            <MessagesContainer>
+              <MessageWithAvatar>
+                <Avatar src={Logo} />
+                <MessageWrapper $isOwn={false}>
+                  <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                </MessageWrapper>
+              </MessageWithAvatar>
+              <MessageWrapper $isOwn={true}>
+                <RenderMessage text={faker.lorem.paragraph()} />
               </MessageWrapper>
-            </MessageWithAvatar>
-            <MessageWrapper $isOwn={true}>
-              <RenderMessage text={faker.lorem.paragraph()} />
-            </MessageWrapper>
-            <MessageWithAvatar>
-              <Avatar src={Logo} />
-              <MessageWrapper $isOwn={false}>
-                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
-                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
-                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
-                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
-                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
-                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
-                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
-                <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
-              </MessageWrapper>
-            </MessageWithAvatar>
-          </MessagesContainer>
-          <RenderMessageInput />
-        </ChatSection>
+              <MessageWithAvatar>
+                <Avatar src={Logo} />
+                <MessageWrapper $isOwn={false}>
+                  <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                  <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                  <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                  <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                  <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                  <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                  <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                  <RenderMessageWithName name={faker.person.firstName()} text={faker.lorem.paragraph()} />
+                </MessageWrapper>
+              </MessageWithAvatar>
+            </MessagesContainer>
+            <RenderMessageInput />
+          </ChatSection>
+          <MembersContainer>
+            <MembersRole>All</MembersRole>
+            <RenderMemberInfo avatarPath={faker.image.avatar()} name={faker.person.fullName()} />
+            <RenderMemberInfo avatarPath={faker.image.avatar()} name={faker.person.fullName()} />
+            <RenderMemberInfo avatarPath={faker.image.avatar()} name={faker.person.fullName()} />
+            <RenderMemberInfo avatarPath={faker.image.avatar()} name={faker.person.fullName()} />
+            <RenderMemberInfo avatarPath={faker.image.avatar()} name={faker.person.fullName()} />
+            <RenderMemberInfo avatarPath={faker.image.avatar()} name={faker.person.fullName()} />
+          </MembersContainer>
+        </div>
       </ThemeProvider >
     </>
   )

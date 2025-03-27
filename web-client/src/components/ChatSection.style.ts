@@ -156,10 +156,11 @@ const SendButton = styled.button`
 
 const ChatSection = styled.div`
     width: 60rem;
-    margin: auto;
+    margin-left: auto;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    border-right: 1px solid #222;
 `
 
 export { MessageBubble, MessageWrapper, Avatar, MessageWithAvatar, MessagesContainer, InputWrapper, MessageInput, SendButton, ChatSection }
