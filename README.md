@@ -1,3 +1,5 @@
+# NOTE: This project is under development under new name & repos: https://github.com/NeoNect-devs
+
 # Avila
 
 Avila is a real-time, HTTP-based chat application designed for seamless communication across web, desktop, and potentially other platforms. It leverages a robust server architecture and shared code for efficient development and maintenance.
